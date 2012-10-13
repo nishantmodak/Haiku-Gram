@@ -26,6 +26,7 @@
 		<div class="span4">
 			<% 3.times do |j| %>
 	  		<% @haiku = Poem.find :first, :offset => rand(Poem.count)  %>
+	  		<% unless @haiku.blank? %>
 				<div class="row <%= cycle('haiku1', 'haiku2' , 'haiku3') %>">
 					<div class="text">
 						<br/>
@@ -33,6 +34,7 @@
 					</div>
 					<br/>
 				</div>
+			<% end %>
 			<% end %>
 		</div>
 	<% end %>
