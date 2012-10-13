@@ -1,0 +1,57 @@
+// Place all the styles related to the Poems controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+	font-family: 'Dancing Script', cursive;
+}
+
+.haiku {
+	font-family: 'Open Sans', sans-serif;
+	font-size: large
+}
+
+.haiku1 {
+	p{
+		font-family: 'Open Sans', sans-serif;
+		font-size: 150%;
+		letter-spacing: 2px;
+		line-height: 1.25;
+
+		#background-color: green;
+		color: green;
+		text-justify: auto;
+	#	border-style:outset;
+	#	border-width:1px;
+	#	border-color: green;
+	}
+}
+
+.text{
+	p{
+	margin-left:.5cm;
+	}
+}
+
+.haiku2 {
+	p{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 150%;
+	letter-spacing: 2px;
+	line-height: 1.25;
+	#background-color: green;
+	color: orange;
+	text-justify: auto;
+}
+}
+
+.haiku3 {
+	p{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 150%;
+	letter-spacing: 2px;
+	line-height: 1.25;
+	#background-color: green;
+	color: purple;
+	text-justify: auto;
+}
+}

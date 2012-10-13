@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Haiku</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="container">
+<div class="row">
+	<div class="span3">
+	</div>
+	<div class="offset3 span6">
+		<%= yield %>
+	</div>
+	<div class="span3">
+	</div>
+</div>
+<br/>
+<div class="row">
+
+	<% 3.times do |i| %>
+		<div class="span4">
+			<% 3.times do |j| %>
+	  		<% @haiku = Poem.find :first, :offset => rand(Poem.count)  %>
+				<div class="row <%= cycle('haiku1', 'haiku2' , 'haiku3') %>">
+					<div class="text">
+						<br/>
+						<%= simple_format @haiku.body %>
+					</div>
+					<br/>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>
+</div>
+</body>
+</html>
