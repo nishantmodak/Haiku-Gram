@@ -1,6 +1,6 @@
 Haiku::Application.routes.draw do
 
-  resources :poems
+  resources :poems, :path => :haikus
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
