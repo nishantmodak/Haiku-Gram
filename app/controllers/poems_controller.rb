@@ -1,11 +1,14 @@
 class PoemsController < ApplicationController
+  http_basic_authenticate_with :name => "heroku", :password => "haiku", :except => [:index, :show]
   # GET /poems
   # GET /poems.json
   def index
-    @poems = Poem.all
+    #@poems = Poem.all
+    @poems = Poem.page(params[:poem]).per(8)
 
     respond_to do |format|
       format.html # index.html.erb
+      format.js
       format.json { render json: @poems }
     end
   end
@@ -45,6 +48,7 @@ class PoemsController < ApplicationController
     respond_to do |format|
       if @poem.save
         format.html { redirect_to @poem, notice: 'Poem was successfully created.' }
+        format.js
         format.json { render json: @poem, status: :created, location: @poem }
       else
         format.html { render action: "new" }

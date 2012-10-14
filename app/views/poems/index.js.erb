@@ -1,0 +1,4 @@
+$('#herokus').fadeOut(1000,function(){
+	$("#paginator").html('<%= escape_javascript(paginate(@poems, :param_name => :poem , :remote => true, :window => 1).to_s) %>');
+	$("#herokus").html("<%= escape_javascript render(@poems) %>").fadeIn(1000,function(){});
+});

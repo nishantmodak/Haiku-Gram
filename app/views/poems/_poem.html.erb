@@ -1,0 +1,7 @@
+
+<div class="span6">
+	<div class="offset1 text <%= cycle('haiku1', 'haiku2', 'haiku3') %>">
+		<%= simple_format poem.body %><%= link_to "@"+poem.by, poem_path(poem) %>
+		<br/>
+	</div>
+</div>

@@ -13,32 +13,50 @@
 <div class="row">
 	<div class="span3">
 	</div>
-	<div class="offset3 span6">
-		<%= yield %>
+	<div class="offset2 span6">
+		<div class="page-header">
+			<%= yield(:pageheader) %>
+  		</div>
 	</div>
 	<div class="span3">
 	</div>
 </div>
 <br/>
 <div class="row">
-
-	<% 3.times do |i| %>
-		<div class="span4">
-			<% 3.times do |j| %>
-	  		<% @haiku = Poem.find :first, :offset => rand(Poem.count)  %>
-	  		<% unless @haiku.blank? %>
-				<div class="row <%= cycle('haiku1', 'haiku2' , 'haiku3') %>">
-					<div class="text">
-						<br/>
-						<%= simple_format @haiku.body %>
-					</div>
-					<br/>
-				</div>
-			<% end %>
-			<% end %>
-		</div>
-	<% end %>
+			<%= yield %>
+</div>
+<div class="row">
+	<div id="paginator">
+	 <%= yield(:paginator) %>
+	</div>
 </div>
 </div>
+<br/>
+<footer class="footer" style="background-color:#c2c2c2;">
+    <div class="container" style="margin:0 auto;">
+        <div class="row">
+            <div class="span2 offset2">
+                <h4>About Haikus</h4>
+                <ul>
+                    <li><a href="">What is a Haiku?</a></li>
+                    <li><a href="">How to write a Haiku?</a></li>
+                </ul>
+            </div>
+            <div class="span2 offset1">
+                <h4>Haiku Generator!</h4>
+                <ul>
+                    <li><a href="">Generate Haikus</a></li>
+                </ul>
+            </div>
+            <div class="span2 offset1">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="" title="Twitter">Twitter Haiku Bot</a></li>
+                    <li><a href="" title="Blogs">Haiku Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
